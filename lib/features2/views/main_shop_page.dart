@@ -4,6 +4,7 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:get/get.dart';
 import 'package:getx_example/features2/controllers/product_controller.dart';
 import 'package:getx_example/features2/views/product_tile.dart';
+import 'package:getx_example/features2/views/settings_view.dart';
 
 class ShopXView extends StatelessWidget {
   ShopXView({Key? key}) : super(key: key);
@@ -13,8 +14,14 @@ class ShopXView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
         actions: [
+          IconButton(
+              onPressed: () {
+                Get.to(
+                  const SettingsView(),
+                );
+              },
+              icon: const Icon(Icons.settings)),
           IconButton(
             onPressed: () {},
             icon: Badge(
@@ -28,7 +35,6 @@ class ShopXView extends StatelessWidget {
               ),
               child: const Icon(
                 Icons.shopping_cart_rounded,
-                color: Colors.black,
               ),
             ),
           )
@@ -37,7 +43,6 @@ class ShopXView extends StatelessWidget {
           onPressed: () {},
           icon: const Icon(
             Icons.arrow_back_ios_new,
-            color: Colors.black,
           ),
         ),
         elevation: 0,
